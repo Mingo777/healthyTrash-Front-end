@@ -1,0 +1,19 @@
+footer{
+    text-align: center;
+    color: white;
+    display: inline-block;
+    bottom: 0;
+    width: 100%;
+  }
+
+  a:hover,button:hover{
+    color: rgb(207, 146, 15) !important;
+  }
+  small{
+      color: white;
+  }
+
+  a{
+      color: white;
+      text-decoration: none;
+  }
