@@ -1,1 +1,76 @@
-<p>contacto works!</p>
+<div class="container my-3 my-sm-5">
+    <h1 class="text-center mb-sm-4 display-1 p-5">Contacto</h1>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2>Dirección:</h2>
+            <address>
+                <strong>HealthyTrash</strong><br />
+                Calle Recogidas, 47<br />
+                18005, Granada<br />
+                <i class="fas fa-fw fa-phone"></i>
+                <a href="tel:+34 4567890">(34) 663 32 05 98</a><br />
+                <i class="fas fa-fw fa-envelope"></i>
+                <a href="mailto:info@domain.com">HealthyTrash@dominio.es</a>
+            </address>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+            <h2>Envia tu mensaje:</h2>
+            <form>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Nombre"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" id="email" class="form-control" name="email"
+                                    placeholder="example@email.com" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="telephone" class="form-label">Teléfono</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                <input type="tel" id="telephone" class="form-control" name="telephone"
+                                    placeholder="663320598" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje:</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                        <textarea id="message" class="form-control" name="message" rows="5"
+                            placeholder="Escribe tu mensaje aqui..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary m-1">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h2>Donde puedes encontrarnos:</h2>
+            <div class="ratio ratio-4x3">
+                <iframe
+                    src="https://www.google.com/maps/place/C.+Recogidas,+Granada/@37.1716037,-3.6033628,19z/data=!4m5!3m4!1s0xd71fc966a7c6a75:0x27e9f13d349f4d40!8m2!3d37.1716946!4d-3.6030222"
+                    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

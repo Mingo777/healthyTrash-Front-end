@@ -1,19 +1,18 @@
-<div class="row">
-    <div class="col-12 col-md-4 offset-md-4">
-        <h3 class="mb-3">LOGIN</h3>
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" class="form-control" formControlName="email">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password">
-            </div>
-            <input type="submit" value="Enviar">
+<body>
+    <div class="wrapper">
+        <form class="login">
+            <p class="title">Bienvenido, a Healthytrash.</p>
+            <input type="text" placeholder="Email" class="form-control" formControlName="email" required autofocus />
+            <i class="fa fa-user"></i>
+            <input type="password" placeholder="Password" class="form-control" formControlName="password" required />
+            <i class="fa fa-key"></i>
+            <a [routerLink]="['/registro']">No tienes cuenta? registrate ahora</a>
+            <button type="submit">
+                <i class="spinner"></i>
+                <span class="state">Log in</span>
+            </button>
+            <!-- <p *ngIf="errorMessage">{{ errorMessage }}</p> -->
         </form>
-        <div class="error" *ngIf=" error !== '' ">
-            {{error}}
-        </div>
+        <footer><a [routerLink]="['/home']">Healthytrash</a></footer>
     </div>
-</div>
+</body>
