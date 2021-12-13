@@ -1,0 +1,110 @@
+<app-hero></app-hero>
+<div class="infoContainer">
+    <div class="infoWrapper">
+        <div class="infoRow">
+            <div class="column1">
+                <div class="textWrapper">
+                    <p class="topLine">El mejor lugar para soñar con comida</p>
+                    <h1 class="heading">La app de recetas mas premiada desde este bootcamps</h1>
+                    <p class="subtitle">
+                        Aquí puedes encontrar como
+                        transformar un plato de Fast-food🍔 en comidas saludable🥗 manteniendo su sabor original😋,
+                        además, incorpora su propio blog donde puedes compartir tus propias recetas, Su propia base de
+                        datos y un chat-Bot para poder ayudar en cualquier campo donde se requiera.
+                    </p>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="imgWrap">
+                    <img src="../../assets/images/Logo_healthy_trashnobg.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="infoContainer">
+    <div class="container">
+
+
+        <h2>Recetas más populares</h2>
+        <a [routerLink]="['/recetas']">leer más</a>
+
+        <hr />
+        <h2>Blog más populares</h2>
+        <a [routerLink]="['/blog']">Leer más</a>
+
+        <hr />
+
+        <h2>Encuentra recetas según su denominación de origen</h2>
+        <a [routerLink]="['/denominacion']">Leer más</a>
+        <hr />
+
+        <div class="grid">
+            <article>
+                <p class="hidden">Mediterránea</p>
+
+                <figure>
+                    <img src="https://media.istockphoto.com/photos/middle-eastern-arabic-or-mediterranean-dinner-table-with-grilled-lamb-picture-id950253086?k=20&m=950253086&s=612x612&w=0&h=sqlpNMqU8sSBIMeXTrp46Wofo06_6RoXIBlCltSCZUM="
+                        alt="Mediterránea" />
+                </figure>
+                <h3>Mediterránea</h3>
+            </article>
+
+            <article>
+                <p class="hidden">Americana</p>
+
+                <figure>
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/23/c9/dc/passyunk-food.jpg"
+                        alt="Americana" />
+                </figure>
+
+                <h3>Americana</h3>
+            </article>
+
+            <article>
+                <p class="hidden">Japonesa</p>
+
+                <figure>
+                    <img src="https://japonandmore.com/wp-content/uploads/2017/11/todos.jpg" alt="Japonesa" />
+                </figure>
+
+                <h3>Japonesa</h3>
+            </article>
+        </div>
+
+        <hr />
+
+        <div class="grid">
+            <article>
+                <p class="hidden">India</p>
+
+                <figure>
+                    <img src="https://static.ideal.es/www/multimedia/201908/10/media/cortadas/comida-india-k5QC-U80942927080x9D-624x385@Ideal.jpg"
+                        alt="India" />
+                </figure>
+                <h3>India</h3>
+            </article>
+
+            <article>
+                <p class="hidden">Arabe</p>
+
+                <figure>
+                    <img src="https://www.elclaustro.edu.mx/claustronomia/media/k2/items/cache/47359a90eed3ee35f2dab5a3c718abb3_XL.jpg"
+                        alt="Arabe" />
+                </figure>
+                <h3>Arabe</h3>
+            </article>
+
+            <article>
+                <p class="hidden">Mexicana</p>
+
+                <figure>
+                    <img src="https://estaticos.miarevista.es/uploads/images/gallery/594ba7a45cafe80dac3c9869/comidamexicana_fb.jpg"
+                        alt="Mexicana" />
+                </figure>
+                <h3>Mexicana</h3>
+            </article>
+        </div>
+    </div>
+</div>
