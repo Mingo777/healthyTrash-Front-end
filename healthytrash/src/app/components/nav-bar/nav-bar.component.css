@@ -1,0 +1,52 @@
+.navbar{
+    height: 70px;
+    padding-bottom: 5rem;
+    display: flex;
+    padding: 10px 60px;
+    margin-bottom: 10rem;
+    background: linear-gradient(to right, #793c02, #e68c05);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar-brand span{
+    color: red;
+  }
+  
+  .float-shadow{
+      display: inline-block;
+      position: relative;
+      transition-duration: 0.3s;
+      transition-property:all;
+  }
+  
+  .float-shadow:before{
+      pointer-events: none;
+       position: absolute;
+      z-index: -1;
+      transition-duration: 0.3s;
+      transition-property: transform opacity;
+      opacity: 1;
+      transform: translateY( 5px);
+  }
+  
+  .float-shadow:hover{
+      transform: translateY(-5px); 
+      color: gold;
+  }
+  
+  .logo{
+      font-family:cursive;
+    font-size: 2rem;
+    color: white;
+    flex: 3;
+    position: relative;
+    z-index: 3;
+    text-shadow: 0px 2px 3px #666;
+  }
+  
+  
+  
+  .navbar-collapse ul {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+    }
