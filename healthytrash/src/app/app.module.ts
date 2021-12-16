@@ -13,6 +13,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { RecetasComponent } from './components/recetas/recetas.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { DetalleRecetasComponent } from './components/detalle-recetas/detalle-recetas.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HeroComponent } from './components/hero/hero.component';
     ContactoComponent,
     RecetasComponent,
     RegistroComponent,
-    HeroComponent
+    HeroComponent,
+    DetalleRecetasComponent
   ],
   imports: [
     BrowserModule,
