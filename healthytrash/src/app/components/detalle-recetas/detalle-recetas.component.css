@@ -1,0 +1,37 @@
+.recetas{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+.receta{
+    margin: 100px;
+    padding: 20px ;
+    border: black solid 3px;
+    background: linear-gradient(#c9a40f, #d4b758);
+}
+
+.receta h2 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: 700;
+}
+
+.receta img{
+    display: block;
+    margin: auto;
+    padding: 20px;
+    
+}
+
+.receta h5{
+    text-align: center;
+    padding: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.658);
+    font-weight:bold ;
+    text-decoration:italic;
+}
+

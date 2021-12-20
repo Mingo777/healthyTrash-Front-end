@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../services/usuarios.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -9,25 +12,54 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
   formulario: FormGroup;
+  error: string;
 
-  constructor(private router: Router) {
+
+  constructor(private usuariosService: UsuariosService, private router: Router) {
     this.formulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      apellidos: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      username: new FormControl(''),
-      /* date: new FormControl(new Date().toLocaleDateString('en-CA'), [Validators.required]), */
-      password: new FormControl('', [Validators.required])
+      nombre: new FormControl('', Validators.required,),
+      apellidos: new FormControl('', Validators.required),
+      email: new FormControl('', [
+        Validators.required, Validators.pattern(/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/)
+      ]),
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+
     });
+    this.error = ''
+
+
   }
+
+
 
   ngOnInit(): void {
+
   }
 
-  onSubmit() { }
 
+  onSubmit() {
+    this.error = '';
+    this.usuariosService.registro(this.formulario.value)
+      .then(response => {
+        if (response.error) {
+          this.error = response.error
+        } else {
+          localStorage.setItem('token_healthy_trash', response.token);
+          alert('El registro es correcto');
+          this.usuariosService.logged(true);
+          this.router.navigate(['/login']);
+        }
+      }
+      )
+      .catch(err => console.log(err)
+      );
+  }
 
   checkError(controlName: string, error: string, touched: boolean): boolean | undefined {
     return touched ? this.formulario.get(controlName)?.hasError(error) && this.formulario.get(controlName)?.touched : this.formulario.get(controlName)?.hasError(error);
   }
+
+
+
 }

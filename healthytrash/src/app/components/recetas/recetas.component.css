@@ -1,0 +1,197 @@
+.Container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   /*  flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #e0eafc, #cfdef3); */
+}
+.Wrapper {
+    height: 820px;
+    width: 1400px;
+     margin: 0; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 100px;
+}
+html, body {
+    background: #fceeb5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+.card {
+    width: 450px;
+    height: 255px;
+    margin: 0.5rem;
+}
+.card h2 {
+    text-align: center;
+    color: orange;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card.green .additional {
+    background: linear-gradient(#dfa814, #d3aa23);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    margin-bottom: 30px;
+} 
+.card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+}
+ .card .additional .user-card {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+} 
+
+.card .additional .user-card .level, .card .additional .user-card .points button {
+    top: 10%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.125rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    
+}
+.card .additional .user-card .points {
+    top: 90%;
+}
+.card .additional .user-card img {
+    top: 50%;
+}
+.card .additional .more-info {
+    width: 300px;
+    float: left;
+    position: absolute;
+    left: 150px;
+    height: 100%;
+}
+.card.green .additional .more-info h2 {
+    color: rgb(41, 24, 24);
+    margin-bottom: 0;
+}
+.card.green .additional .more-info h2:hover {
+    cursor: pointer;
+}
+.card.green .additional .coords {
+    margin-top: 10px;
+    color: #09130d;
+}
+.card .additional .coords span + span {
+    float: right;
+}
+
+.card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+}
+.card .additional .stats i {
+    display: block;
+}
+.card .additional .stats div.title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.card .additional .stats div.value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+.card .additional .stats div.value.infinity {
+    font-size: 2.5rem;
+}
+.card .general {
+    width: 300px;
+    height: 100%;
+    font-size:1em ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
+}
+.card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+}
+
+#full-stars-example-two .rating-group {
+    display: inline-flex;
+}
+#full-stars-example-two .rating__icon {
+    pointer-events: none;
+}
+#full-stars-example-two .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+}
+#full-stars-example-two .rating__input--none {
+    display: none;
+}
+#full-stars-example-two .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1rem;
+}
+#full-stars-example-two .rating__icon--star {
+    color: red;
+}
+#full-stars-example-two .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+#full-stars-example-two .rating-group:hover .rating__label .rating__icon--star {
+    color: blue;
+}
+#full-stars-example-two .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: green;
+}
+
+
+
+.modal-dialog{
+   align-content: center;
+}
+.modal-content{
+    width: 800px;
+}
+
+.modal-body form label{
+    margin: 10px;
+}
+
+
+.modal-body form textarea{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+
+}
+
+.modal-body form button {
+    margin:10px;
+    padding: 10px;
+}
+
+

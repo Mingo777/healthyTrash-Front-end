@@ -1,0 +1,47 @@
+<body>
+    <div class="wrapper">
+        <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <p class="title">Registro</p>
+
+            <label>Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" required autofocus />
+            <p class="error" *ngIf="checkError('nombre', 'required',true)">
+                El campo es requerido, por dios todo el mundo tiene nombre
+            </p>
+
+            <label>Apellidos</label>
+            <input type="text" class="form-control" formControlName="apellidos" required autofocus />
+            <p class="error" *ngIf="checkError('apellidos', 'required',true)">
+                El campo es requerido, por dios todo el mundo tiene apellido
+            </p>
+
+            <label>Email</label>
+            <input type="text" placeholder="nombre@gmail.com" class="form-control" formControlName="email" required
+                autofocus />
+            <p class="error" *ngIf="checkError('email', 'required',true)">
+                El campo es requerido.
+            </p>
+            <p class="error" *ngIf="checkError('email', 'pattern',false)">
+                El campo email debe ser un email correcto.
+            </p>
+
+            <label>Username</label>
+            <input type="text" placeholder="username" class="form-control" formControlName="username" required
+                autofocus />
+            <p class="error" *ngIf="checkError('username', 'required',true)">
+                El campo es requerido
+            </p>
+
+            <label>Password</label>
+            <input type="password" placeholder="Password" class="form-control" formControlName="password" required />
+            <p class="error" *ngIf="checkError('password', 'required',true)">
+                El campo es requerido
+            </p>
+
+            <button type="submit" value="enviar">
+                <i class="spinner"></i>
+                <span class="state">Enviar</span>
+            </button>
+        </form>
+    </div>
+</body>

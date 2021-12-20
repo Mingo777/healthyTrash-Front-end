@@ -1,1 +1,133 @@
-<p>recetas works!</p>
+<div class="Container mt-5">
+    <div class="center Wrapper mt-5 ">
+        <div class="card green " *ngFor="
+          let recetas of arrRecetas ">
+            <div class="additional">
+                <div class="user-card">
+                    <div class="level center">{{ recetas.Fecha_inscripcion | date }}</div>
+                    <div class="points center">
+                        <button (click)="deleteRecetas(recetas.id)" class="btn btn-warning">borrar</button>
+                    </div>
+                    <img [src]="recetas.urlFotos" width="145" height="145" class="mt-5" />
+                </div>
+                <div class="more-info">
+                    <h2 [routerLink]="['/recetas',recetas.id]">
+                        {{recetas.titulo}}
+                    </h2>
+                    <div class="coords">
+                        <span><strong>Fecha:</strong> {{ recetas.Fecha_inscripcion | date }}</span>
+                    </div>
+                    <div class="coords ">
+                        <span><strong>Autor:</strong> {{ recetas.autor }}</span>
+                    </div>
+
+                    <div id="full-stars-example-two">
+                        <div class="rating-group">
+                            <input disabled checked class="rating__input rating__input--none" name="rating3"
+                                id="rating3-none" value="0" type="radio" />
+
+                            <label aria-label="1 star" class="rating__label" for="rating3-1"><i
+                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                            <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
+
+                            <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
+                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                            <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
+
+                            <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
+                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                            <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
+
+                            <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
+                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                            <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
+
+                            <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
+                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                            <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="general">
+                <h2>{{ recetas.titulo }}</h2>
+                <p>{{ recetas.descripcion }}</p>
+                <span class="more"> Healthy<strong>Trash</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <button type="button" class="btn btn-primary my-3 d-block ms-auto" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Crea una nueva receta
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Crea una nueva receta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+                    <label>Título</label>
+                    <input type="text" class="form-control" formControlName="titulo" required autofocus />
+                    <p class="error" *ngIf="checkError('titulo', 'required',true)">
+                        El campo es requerido, por dios todo el mundo tiene nombre
+                    </p>
+
+                    <label>Ingredientes</label>
+                    <input type="text" class="form-control" formControlName="ingredientes" required autofocus />
+                    <p class="error" *ngIf="checkError('ingredientes', 'required',true)">
+                        El campo es requerido, por dios todo el mundo tiene apellido
+                    </p>
+
+                    <label>Imagen</label>
+                    <input type="text" class="form-control" formControlName="urlFotos" required autofocus />
+                    <p class="error" *ngIf="checkError('urlFotos', 'required',true)">
+                        El campo es requerido.
+                    </p>
+
+
+                    <label>Descripción</label>
+                    <input type="text" class="form-control" formControlName="descripcion" required autofocus />
+                    <p class="error" *ngIf="checkError('descripcion', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+                    <label>Fecha de inscripción</label>
+                    <input type="date" class="form-control" formControlName="Fecha_inscripcion" required />
+                    <p class="error" *ngIf="checkError('Fecha_inscripcion', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+                    <label>Autor</label>
+                    <input type="text" class="form-control" formControlName="autor" required autofocus />
+                    <p class="error" *ngIf="checkError('autor', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+                    <label>Modo de Cocinado</label>
+                    <textarea cols="20" rows="10" formControlName="modoDeCocinado"></textarea>
+                    <p class="error" *ngIf="checkError('modoDeCocinado', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+                    <button type="submit" value="enviar" class="btn btn-primary" data-bs-dismiss="modal">
+                        <i class="spinner"></i>
+                        <span class="state">Enviar</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

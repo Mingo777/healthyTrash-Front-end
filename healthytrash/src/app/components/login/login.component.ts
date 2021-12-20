@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = new FormGroup({
-      email: new FormControl('laura@gmail.com'),
-      password: new FormControl('12345')
+      email: new FormControl(''),
+      password: new FormControl('')
     });
 
     this.error = '';
@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
         if (response.error) {
           this.error = response.error;
         } else {
-          localStorage.setItem('token_gym', response.token);
+          localStorage.setItem('token_healthy_trash', response.token);
           alert('Login correcto!!');
           this.usuariosService.logged(true);
-          this.router.navigate(['/clientes']);
+          this.router.navigate(['/home']);
         }
       })
       .catch(err => console.log(err));

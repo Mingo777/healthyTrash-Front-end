@@ -1,1 +1,13 @@
-<p>detalle-recetas works!</p>
+<div class="recetas mt-5" *ngIf="receta">
+    <div class="receta offset-md-2 ">
+        <h2> {{receta.titulo}}</h2>
+        <hr>
+        <img [src]="receta.urlFotos" alt="">
+        <h5> {{receta.descripcion}}</h5>
+        <p><strong>Ingredientes</strong>: {{receta.ingredientes}}</p>
+        <p><strong>Modo de Cocinado</strong>: {{receta.modoDeCocinado}}</p>
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>

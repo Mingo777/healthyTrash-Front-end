@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Usuario } from '../interfaces/usuarios.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,9 @@ export class UsuariosService {
     this.login$ = new Subject();
   }
 
+
   registro(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/registro`, formValues).toPromise();
+    return this.httpClient.post<any>(`${this.baseUrl}/registro`, formValues).toPromise();
     /*   return firstValueFrom(this.httpClient.post(`${this.baseUrl}/registro`, formValues)); */
   }
 

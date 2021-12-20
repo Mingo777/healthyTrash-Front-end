@@ -1,6 +1,6 @@
 <body>
     <div class="wrapper">
-        <form class="login">
+        <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <p class="title">Bienvenido, a Healthytrash.</p>
             <input type="text" placeholder="Email" class="form-control" formControlName="email" required autofocus />
             <i class="fa fa-user"></i>
@@ -11,8 +11,8 @@
                 <i class="spinner"></i>
                 <span class="state">Log in</span>
             </button>
-            <!-- <p *ngIf="errorMessage">{{ errorMessage }}</p> -->
+            <p *ngIf="error">{{ error }}</p>
         </form>
-        <footer><a [routerLink]="['/home']">Healthytrash</a></footer>
+        <footer><a [routerLink]="['/registro']">Healthytrash</a></footer>
     </div>
 </body>

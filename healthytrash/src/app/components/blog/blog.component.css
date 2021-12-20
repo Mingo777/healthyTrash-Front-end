@@ -1,0 +1,61 @@
+.blogs{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.blog{
+    margin: 100px;
+    padding: 20px ;
+    border: black solid 3px;
+    background: linear-gradient(#c9a40f, #d4b758);
+    border-radius: 5%;
+}
+
+.blog h2 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: 700;
+}
+
+.blog img{
+    display: block;
+    margin: auto;
+    padding: 20px;
+    
+}
+
+.blog h5{
+    text-align: center;
+    padding: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.658);
+    font-weight:bold ;
+    text-decoration:italic;
+}
+
+.modal-dialog{
+    align-content: center;
+ }
+ .modal-content{
+     width: 800px;
+ }
+ 
+ .modal-body form label{
+     margin: 10px;
+ }
+ 
+ 
+ .modal-body form textarea{
+     display: flex;
+     width: 100%;
+     padding: 20px;
+ 
+ }
+ 
+ .modal-body form button {
+     margin:10px;
+     padding: 10px;
+ }

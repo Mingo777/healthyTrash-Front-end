@@ -1,1 +1,74 @@
-<p>blog works!</p>
+<div class="blogs mt-5">
+    <div class="blog offset-md-3 " *ngFor="let blog of arrBlog">
+        <h2> {{blog.titulo}}</h2>
+
+        <hr>
+        <img [src]="blog.imagen" alt="">
+        <h5> Fecha: {{blog.fecha}}</h5>
+        <p><strong>Descripcion</strong>: {{blog.descripcion}}</p>
+        <p><strong>Chef:</strong>: {{blog.nombre}}</p>
+        <button (click)="deleteBlog(blog.id)" class="btn btn-danger d-block mx-auto w-50">Borrar</button>
+
+    </div>
+</div>
+
+<div class="container">
+    <button type="button" class="btn btn-primary my-3 d-block ms-auto" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Crea un nuevo Blog
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Crea una nueva receta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre" required autofocus />
+                    <p class="error" *ngIf="checkError('nombre', 'required',true)">
+                        El campo es requerido, por dios todo el mundo tiene nombre
+                    </p>
+
+                    <label>Título</label>
+                    <input type="text" class="form-control" formControlName="titulo" required autofocus />
+                    <p class="error" *ngIf="checkError('titulo', 'required',true)">
+                        El campo es requerido, por dios todo el mundo tiene apellido
+                    </p>
+
+                    <label>Imagen</label>
+                    <input type="text" class="form-control" formControlName="imagen" required autofocus />
+                    <p class="error" *ngIf="checkError('imagen', 'required',true)">
+                        El campo es requerido.
+                    </p>
+
+
+                    <label>Descripción</label>
+                    <textarea cols="20" rows="10" formControlName="descripcion"></textarea>
+                    <p class="error" *ngIf="checkError('descripcion', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+                    <label>Fecha</label>
+                    <input type="date" class="form-control" formControlName="fecha" required />
+                    <p class="error" *ngIf="checkError('Fecha_inscripcion', 'required',true)">
+                        El campo es requerido
+                    </p>
+
+
+                    <button type="submit" value="enviar" class="btn btn-primary" data-bs-dismiss="modal">
+                        <i class="spinner"></i>
+                        <span class="state">Enviar</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
