@@ -1,57 +1,56 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-5">
 
-    <a class="navbar-brand logo" [routerLink]="['/home']"><strong>Healthy<span>Trash</span></strong>
-    </a>
+  <a class="navbar-brand logo" [routerLink]="['/home']"><strong>Healthy<span>Trash</span></strong>
+  </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 
-    <div class="collapse navbar-collapse text-start" id="basicExampleNav">
+  <div class="collapse navbar-collapse text-start" id="basicExampleNav">
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item mr-3">
-                <a class="nav-link float-shadow" [routerLink]="['/home']"><i class="fas fa-home"></i> Home
-                </a>
-            </li>
-            <li class="nav-item mr-3">
-                <a class="nav-link float-shadow" [routerLink]="['/recetas']"><i class="fas fa-heart"></i> Recetas
-                </a>
-            </li>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mr-3" *ngIf="estado">
+        <a class="nav-link float-shadow" [routerLink]="['/home']"><i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li class="nav-item mr-3" *ngIf="estado">
+        <a class="nav-link float-shadow" [routerLink]="['/recetas']"><i class="fas fa-heart"></i> Recetas
+        </a>
+      </li>
 
-            <li class="nav-item mr-3">
-                <a class="nav-link float-shadow" [routerLink]="['/blog']"><i class="fas fa-users"></i>
-                    ChefBlogs
-                </a>
-            </li>
+      <li class="nav-item mr-3" *ngIf="estado">
+        <a class="nav-link float-shadow" [routerLink]="['/blog']"><i class="fas fa-users"></i>
+          ChefBlogs
+        </a>
+      </li>
 
-            <li class="nav-item dropdown mr-2">
-                <a class="nav-link dropdown-toggle float-shadow" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Login
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item float-shadow" [routerLink]="['/login']">Log in</a></li>
-                    <li><a class="dropdown-item float-shadow" href="#">Log out </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item float-shadow" [routerLink]="['/settings']">Settings</a></li>
-                </ul>
-            </li>
-
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle float-shadow" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Login
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li *ngIf="!estado"><a class="dropdown-item float-shadow" [routerLink]="['/login']">Log in</a></li>
+          <li *ngIf="estado"><a class="dropdown-item float-shadow" (click)="onLogOut()">Log out </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
         </ul>
+      </li>
 
-        <div class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Recetas / Chef / Blogs" aria-label="Search"
-                [(ngModel)]="search" />
-            <button (click)="searchTitle()" class="btn btn-success ml-1" type="button">
-                Buscar
-            </button>
-        </div>
+    </ul>
+
+    <div class="d-flex">
+      <input class="form-control me-2" type="text" placeholder="Recetas / Chef / Blogs" aria-label="Search"
+        [(ngModel)]="search" />
+      <button (click)="searchTitle()" class="btn btn-success ml-1" type="button">
+        Buscar
+      </button>
     </div>
+  </div>
 
 </nav>
 

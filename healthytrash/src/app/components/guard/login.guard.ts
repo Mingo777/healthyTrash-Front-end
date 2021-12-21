@@ -13,7 +13,7 @@ export class LoginGuard implements CanActivate {
     if (localStorage.getItem('token_healthy_trash')) {
       return true;
     } else {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
       return false
     }
   }
